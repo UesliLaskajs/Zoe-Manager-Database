@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UesliDatabaseDataSet.cs">
+      <DependentUpon>UesliDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UesliDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\bin\Debug\WpfAppZooManager_Database.exe.config
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\bin\Debug\WpfAppZooManager_Database.exe
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\bin\Debug\WpfAppZooManager_Database.pdb
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\MainWindow.g.cs
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\App.g.cs
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database_MarkupCompile.cache
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database_MarkupCompile.lref
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\MainWindow.baml
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database.g.resources
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database.Properties.Resources.resources
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database.csproj.GenerateResource.cache
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database.exe
+C:\Users\User\source\repos\WpfAppZooManager_Database\WpfAppZooManager_Database\obj\Debug\WpfAppZooManager_Database.pdb
