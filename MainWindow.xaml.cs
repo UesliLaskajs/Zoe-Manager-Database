@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
 namespace WpfAppZooManager_Database
 {
     /// <summary>
@@ -83,6 +84,8 @@ namespace WpfAppZooManager_Database
                     ZooList.DisplayMemberPath = "Name";
                     ZooList.SelectedValuePath = "Id";
                     ZooList.ItemsSource = AnimalsTable.DefaultView;
+
+                  
                 }
             }
 
@@ -145,6 +148,72 @@ namespace WpfAppZooManager_Database
                 ShowTable();
             }
 
+        }
+
+        private void Zoo_Add_Handler(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "INSERT INTO Zoo (Location) VALUES (@Location)";
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlConnection.Open();
+                    sqlCommand.Parameters.AddWithValue("@Location", myTextBox.Text);
+                    sqlCommand.ExecuteNonQuery(); // Use ExecuteNonQuery for insert operations
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowTable(); // Refresh the display after the insert
+            }
+        }
+
+        private void AnimalZoo_Add(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+               
+                if (AnimalsList.SelectedValue == null || ListZoo.SelectedValue == null)
+                {
+                    MessageBox.Show("Please select both an animal and a zoo.");
+                    return;
+                }
+
+                string query = "INSERT INTO ZooAnimals (ZooId, AnimalsId) VALUES (@ZooId, @AnimalsId)";
+
+               
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlConnection.Open();
+
+                    // Log types of selected values for debugging
+                    MessageBox.Show($"AnimalsList.SelectedValue Type: {AnimalsList.SelectedValue?.GetType().ToString()}");
+                    MessageBox.Show($"ListZoo.SelectedValue Type: {ListZoo.SelectedValue?.GetType().ToString()}");
+
+                    // Use parameters with explicit types
+                    sqlCommand.Parameters.Add(new SqlParameter("@AnimalsId", SqlDbType.Int) { Value = Convert.ToInt32(AnimalsList.SelectedValue) });
+                    sqlCommand.Parameters.Add(new SqlParameter("@ZooId", SqlDbType.Int) { Value = Convert.ToInt32(ListZoo.SelectedValue) });
+
+                    // Use ExecuteNonQuery for insert
+                    int rowsAffected = sqlCommand.ExecuteNonQuery();
+                    MessageBox.Show($"{rowsAffected} record(s) added.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                // Log the exception to a file or logging system
+            }
+            finally
+            {
+                // Refresh or update UI elements here if needed
+                AssociatedAnimals();
+            }
         }
 
 
